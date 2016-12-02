@@ -19,3 +19,5 @@ Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 Route::get('/', 'PagesController@home');
 Route::get('/home', 'HomeController@index');
+Route::post('upload', 'ImagesController@store');
+
