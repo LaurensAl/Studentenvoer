@@ -18,3 +18,4 @@ Route::get('/', function () {
 route::get('about', function() {
     return 'About Page';
 });
+Route::get('/', 'PagesController@home');
