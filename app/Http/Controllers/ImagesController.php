@@ -15,7 +15,8 @@ class ImagesController extends Controller
 
             $name = $file->getClientOriginalName();
 
-            $file->move(public_path() . '/images/', $name);
+            $file->save();
+            $file->save( public_path('/uploads/' . $name) );
 
             return redirect('/')->with('status', 'Your image has been uploaded successfully!');
         }
