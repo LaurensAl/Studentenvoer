@@ -8,6 +8,7 @@
                  <div class="panel panel-default">
 
                      <div class="panel-heading">Dashboard</div>
+                     <div><img src="/images/banner.jpg" width="100%"/></div>
 
                      <div class="panel-body">
 

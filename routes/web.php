@@ -23,7 +23,9 @@ Route::get('/home', 'HomeController@index');
 
 Route::post('banner', function() {
 
-    request()->file('banner')->store('images');
+    $file = request()->file('banner');
+        $file->StoreAs('images/', "banner.jpg");
+//    request()->file('banner')->store('images');
 
     return back()->with('status', 'Your image has been uploaded successfully!');
 
