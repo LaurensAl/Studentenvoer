@@ -11,7 +11,7 @@
 
                      <div class="panel-body">
 
-                         <form method="POST" action="/upload" enctype="multipart/form15 -data">
+                         <form method="POST" action="banner" enctype="multipart/form-data">
 
                              @foreach ($errors->all() as $error)
                                  <p class="alert alert-danger">{{ $error }}</p>
@@ -26,14 +26,13 @@
                              {!! csrf_field() !!}
 
                              <div class="form-group">
-                                 <label for="image">Choose an image</label>
-                                 <input type="file" id="image" name="image">
+                                 <label for="banner">Choose an image</label>
+                                 <input type="file" name="banner">
                                  </div>
 
                              <button type="submit" class="btn btn-default">Upload</button>
 
-                                Chapter 1: Back End Recipes 53
-                                 </form>
+                             </form>
 
                          </div>
                      </div>
