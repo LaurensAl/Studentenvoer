@@ -20,6 +20,8 @@ Route::get('contact', 'PagesController@contact');
 Route::get('/', 'PagesController@home');
 Route::get('/home', 'HomeController@index');
 //Route::post('upload', 'ImagesController@store');
+Route::get('/logout', 'Auth\LoginController@logout');
+
 
 Route::post('banner', function() {
 
