@@ -31,7 +31,7 @@
                                  <input type="file" name="banner">
                                  </div>
 
-                             <button type="submit" class="btn btn-default">Upload</button>
+                             <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-cloud-upload">&nbsp</span>Upload</button>
 
                              </form>
 
