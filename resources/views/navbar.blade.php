@@ -16,6 +16,7 @@
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
              <ul class="nav navbar-nav navbar-right">
                  <li class="active"><a href="/"><span class="glyphicon glyphicon-home">&nbsp</span>Home</a></li>
+                 <li><a href="/blog"><span class="glyphicon glyphicon-folder-open">&nbsp</span>Blog</a></li>
                  <li><a href="/about"><span class="glyphicon glyphicon-user">&nbsp</span>About</a></li>
                  <li><a href="/contact"><span class="glyphicon glyphicon-info-sign">&nbsp</span>Contact</a></li>
                  <!-- Authentication Links -->

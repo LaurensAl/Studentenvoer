@@ -21,6 +21,7 @@ Route::get('/', 'PagesController@home');
 Route::get('/home', 'HomeController@index');
 //Route::post('upload', 'ImagesController@store');
 Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/blog', 'BlogController@index');
 
 
 Route::post('banner', function() {
