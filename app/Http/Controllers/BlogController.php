@@ -14,4 +14,13 @@ class BlogController extends Controller
     return view('index', compact('posts'));
  }
 //
+public function update()
+{
+    $file = request()->file('banner');
+    $file->StoreAs('images/', "banner.jpg");
+//    request()->file('banner')->store('images');
+
+    return back()->with('status', 'Your image has been uploaded successfully!');
+
+}
 }
