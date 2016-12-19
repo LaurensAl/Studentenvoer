@@ -1,5 +1,5 @@
-@extends('master')
- @section('title', 'Blog')
+@extends('layouts.app')
+ @section('title', 'Recepten')
  @section('content')
 
      <div class="container col-md-8 col-md-offset-2">

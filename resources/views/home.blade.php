@@ -12,7 +12,7 @@
 
                      <div class="panel-body">
 
-                         <form method="POST" action="banner" enctype="multipart/form-data">
+                         <form method="POST" action="recepten" enctype="multipart/form-data">
 
                              @foreach ($errors->all() as $error)
                                  <p class="alert alert-danger">{{ $error }}</p>

@@ -17,14 +17,14 @@ Route::get('/', function () {
 
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
-Route::get('/', 'PagesController@home')->middleware('auth');
+//Route::get('/', 'PagesController@home')->middleware('auth');
 
-Route::get('/home', 'HomeController@index')->middleware('auth');
+//Route::get('/home', 'HomeController@index');
+Route::get('/', 'RecipesController@home');
 //Route::post('upload', 'ImagesController@store');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
-Route::get('/blog', 'BlogController@index');
-
-Route::post('banner','BlogController@update');
+Route::get('/', 'RecipesController@index');
+Route::post('recepten', 'RecipesController@update');
 

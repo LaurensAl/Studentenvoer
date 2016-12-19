@@ -9,21 +9,22 @@
                  <span class="icon-bar"></span>
                  <span class="icon-bar"></span>
                 </button>
-             <a class="navbar-brand" href="Laurens">Studentenvoer Laurens</a>
+             <a class="navbar-brand" href="">Studentenvoer Laurens</a>
              </div>
 
          <!-- Navbar Right -->
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
              <ul class="nav navbar-nav navbar-right">
-                 <li class="active"><a href="/"><span class="glyphicon glyphicon-home">&nbsp</span>Home</a></li>
-                 <li><a href="/blog"><span class="glyphicon glyphicon-folder-open">&nbsp</span>Blog</a></li>
+                 <li class=""><a href="/"><span class="glyphicon glyphicon-home">&nbsp</span>Home</a></li>
+
                  <li><a href="/about"><span class="glyphicon glyphicon-user">&nbsp</span>About</a></li>
                  <li><a href="/contact"><span class="glyphicon glyphicon-info-sign">&nbsp</span>Contact</a></li>
                  <!-- Authentication Links -->
                  @if (Auth::guest())
                      <li><a href="{{ url('/login') }}"><span class="glyphicon glyphicon-log-in">&nbsp</span>Login</a></li>
-                     <li><a href="{{ url('/register') }}"><span class="glyphicon glyphicon-log-out">&nbsp</span>Register</a></li>
+
                  @else
+                     <li><a href="{{ url('/register') }}"><span class="glyphicon glyphicon-log-out">&nbsp</span>Register</a></li>
                      <li class="dropdown">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px">
                              <img src="/avatar/{{ Auth::user()->foto }}" style="width:32px; height:32px; position:absolute; top:10px; left:10px; border-radius:50%">
