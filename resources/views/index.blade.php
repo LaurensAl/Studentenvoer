@@ -2,7 +2,7 @@
  @section('title', 'Recepten')
  @section('content')
 
-     <div class="container col-md-8 col-md-offset-2">
+     <div class="container col-md-11 col-md-offset-1">
 
          @if (session('status'))
              <div class="alert alert-success">

@@ -18,7 +18,6 @@ Route::get('/', function () {
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 //Route::get('/', 'PagesController@home')->middleware('auth');
-
 //Route::get('/home', 'HomeController@index');
 Route::get('/', 'RecipesController@home');
 //Route::post('upload', 'ImagesController@store');
