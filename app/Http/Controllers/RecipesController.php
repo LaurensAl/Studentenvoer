@@ -19,4 +19,9 @@ class RecipesController extends Controller
         return view('index', compact('posts'));
     }
 
+    public function addblog()
+    {
+       return view('addblog');
+    }
+
 }
