@@ -24,6 +24,7 @@
                      <li><a href="{{ url('/login') }}"><span class="glyphicon glyphicon-log-in">&nbsp</span>Login</a></li>
 
                  @else
+                     <li><a href="{{ url('/addblog') }}"><span class="glyphicon glyphicon-pencil">&nbsp</span>Recept toevoegen</a></li>
                      <li><a href="{{ url('/register') }}"><span class="glyphicon glyphicon-log-out">&nbsp</span>Register</a></li>
                      <li class="dropdown">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px">

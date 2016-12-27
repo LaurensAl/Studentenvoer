@@ -13,22 +13,23 @@ class PostsTableSeeder extends Seeder
      * @return void
      */
     public function run()
- {
- $faker = Faker::create();
+    {
+        $faker = Faker::create();
+        $image = 'banner.jpg';
 
- foreach(range(1,20) as $index)
- {
- $title = $faker->text(80);
+        foreach (range(1, 20) as $index) {
+            $title = $faker->text(80);
 
- Post::create([
- 'title' => $title,
- 'content' =>$faker->paragraph(30),
- 'slug' => Str::slug($title, '-'),
- 'status' => 1,
- 'user_id' => $faker->numberBetween($min = 1, $max = 5),
- ]);
- }
+            Post::create([
+                'title' => $title,
+                'content' => $faker->paragraph(30),
+                'slug' => Str::slug($title, '-'),
+                'status' => 1,
+                'foto' => $image,
+                'user_id' => $faker->numberBetween($min = 1, $max = 5),
+            ]);
+        }
 
- }
+    }
 
 }

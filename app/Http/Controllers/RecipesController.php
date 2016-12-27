@@ -7,10 +7,10 @@ use App\Post;
 
 class RecipesController extends Controller
 {
-    public function home()
-    {
-        return view('index');
-    }
+//    public function home()
+//    {
+//        return view('index');
+//    }
 
     public function index()
     {

@@ -9,9 +9,9 @@
          <div class="row">
              <div class="col-md-4">
                  <p>Feel Free to contact me!</p>
-                 <p><span class="glyphicon glyphicon-map-marker"></span>Almere, NL</p>
-                 <p><span class="glyphicon glyphicon-phone"></span>Phone: +31 681449595</p>
-                 <p><span class="glyphicon glyphicon-envelope"></span>Email: Clipsedesign@gmail.com</p>
+                 <p><span class="glyphicon glyphicon-map-marker">&nbsp;</span>Almere, NL</p>
+                 <p><span class="glyphicon glyphicon-phone">&nbsp;</span>Phone: +31 681449595</p>
+                 <p><span class="glyphicon glyphicon-envelope">&nbsp;</span>Email: Clipsedesign@gmail.com</p>
              </div>
              <div class="col-md-8">
                  <div class="row">
@@ -22,7 +22,7 @@
                          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
                      </div>
                  </div>
-                 <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                 <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="10"></textarea>
                  <br>
                  <div class="row">
                      <div class="col-md-12 form-group">

@@ -19,11 +19,11 @@ Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 //Route::get('/', 'PagesController@home')->middleware('auth');
 //Route::get('/home', 'HomeController@index');
-Route::get('/', 'RecipesController@home');
+//Route::get('/', 'RecipesController@home');
 //Route::post('upload', 'ImagesController@store');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/', 'RecipesController@index');
-Route::post('recepten', 'RecipesController@update');
+Route::post('addblog', 'RecipesController@update')->middleware('auth');
 
