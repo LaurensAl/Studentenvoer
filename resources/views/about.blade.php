@@ -4,7 +4,7 @@
  @section('content')
      <div id="band" class="container text-center">
          <h3>Laurens Albers</h3>
-         <p><em>My First Laravel Blog!</em></p>
+         <p><em>My First Laravel Blog!</em></p><br>
          <p>This project called Studentenvoer has been created by me (Laurens Albers). The website is a result of a schoolproject where the student has to create a (recipes)blog using Laravel. I had a lot of fun using different kinds of tools to make this project a reality. Following this text you can find a bit of information about me and the things i like. Feel free to contact me using the contact page for any questions or suggestions you might have.</p>
          <br>
          <div class="row">
