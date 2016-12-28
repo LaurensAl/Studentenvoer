@@ -15,7 +15,7 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $image = 'pizza.png';
+        $image = array('pizza.png','burger.png','shake.png');
 
         foreach (range(1, 20) as $index) {
             $title = $faker->text(80);
@@ -26,7 +26,7 @@ class PostsTableSeeder extends Seeder
                 'slug' => Str::slug($title, '-'),
                 'status' => 1,
                 'ingredients' => $faker->paragraph(30),
-                'foto' => $image,
+                'foto' => $faker->randomElement($image),
                 'user_id' => $faker->numberBetween($min = 1, $max = 5),
             ]);
         }

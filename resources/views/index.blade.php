@@ -16,13 +16,14 @@
                 <h2 class="col-md-12">{!! $post->title !!}
                 </h2>
                 <div class="col-md-4">
-                    <a href="viewblog/{{$post->id}}"><img src="/images/{!! $post->foto !!}"
-                        width="100%"></a>
+                    <img src="/images/{!! $post->foto !!}"
+                         width="100%">
                 </div>
 
                 <div class="col-md-4">
                     <h3>How to prepare:</h3>
                     {!! mb_substr($post->content,0,500) !!}
+                    <h6><a href="viewblog/{{$post->id}}">Read more...</a>                    </h6>
                 </div>
                 <div class="col-md-4">
                     <h3>Ingredients:</h3>
