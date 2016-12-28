@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Recepten')
+@section('title', 'Recipes')
 @section('content')
     {!! $posts->render() !!}
     <div class="container col-md-8 col-md-offset-2">
@@ -23,7 +23,7 @@
                 <div class="col-md-4">
                     <h3>How to prepare:</h3>
                     {!! mb_substr($post->content,0,500) !!}
-                    <h6><a href="viewblog/{{$post->id}}">Read more...</a>                    </h6>
+                    <h6><a href="viewblog/{{$post->id}}">Read more...</a></h6>
                 </div>
                 <div class="col-md-4">
                     <h3>Ingredients:</h3>

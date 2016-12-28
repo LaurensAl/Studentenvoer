@@ -24,23 +24,24 @@ class RecipesController extends Controller
     public function addblog()
     {
         return view('addblog');
-
     }
 
-    public function editblog()
+    public function viewblog(post $post)
     {
-        return view('edit');
+        return view('view', compact('post'));
+    }
+
+    public function editblog(post $post)
+    {
+        return view('edit', compact('post'));
     }
 
     public function updateblog(request $req)
     {
         $req->hasFile('foto');
-            $foto = $req->file('foto');
-            $name = $foto->getClientOriginalName();
-            $foto->move(public_path() . '/images/', $name);
-//            $foto->save('/images/', $name);
-
-
+        $foto = $req->file('foto');
+        $name = $foto->getClientOriginalName();
+        $foto->move(public_path() . '/images/', $name);
 
         $post = new Post;
         $post->title = $req['title'];
@@ -53,13 +54,6 @@ class RecipesController extends Controller
         return back()->with('status', 'Update was a succes!');
     }
 
-
-    public function viewblog(post $post)
-    {
-
-
-        return view('view', compact('post'));
-    }
 
     public function destroy()
     {
