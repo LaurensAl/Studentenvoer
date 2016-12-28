@@ -9,7 +9,7 @@
                  <span class="icon-bar"></span>
                  <span class="icon-bar"></span>
                 </button>
-             <a class="navbar-brand" href="">Studentenvoer Laurens</a>
+             <a class="navbar-brand" style="font-family: 'Pacifico', cursive;" >Studentenvoer Laurens Albers</a>
              </div>
 
          <!-- Navbar Right -->

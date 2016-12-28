@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('title', 'viewblog')
 @section('content')
-    <div id="contact" class="container">
+    <div id="contact" class="container" >
         <h3 class="text-center">View the recipe</h3>
-                <p class="text-center"><em>Enjoy reading, preparing and eating!</em></p><hr>
+        <p class="text-center"><em>Enjoy reading, preparing and eating!</em></p>
+        <hr>
         @if (Auth::user())
             <a href="editblog/{{$post->id}}">
                 <button class="btn pull-right">Edit</button>
@@ -13,26 +14,22 @@
             <div class="col-md-12">
                 <div><img src="/images/{{$post->foto}}" width="100%"/></div>
             </div>
-            <form class="col-md-12">
+            <for class="col-md-12">
                 <div class="row">
                     <input type="hidden" name="id" id="id" value="{{$post->id}}">
-                    <div class="col-md-12 form-group"><h3>Recipe:</h3>
-                        <input disabled
-                               style="background:white; border-style: none; border-color: Transparent; overflow: auto;"
-                               class="form-control" id="title" name="title" type="text" value="{{$post->title}}"
-                               required>
+                    <div class="col-md-12 form-group">
+                        <h2 class="text-center" style="font-family: 'Pacifico', cursive;"
+                            class="col-md-12">{!! $post->title !!}
+                        </h2>
                     </div>
-                    <div class="col-md-6 form-group"><h3>How to prepare:</h3>
-                        <textarea disabled
-                                  style="background:white; border-style: none; border-color: Transparent; overflow: auto;"
-                                  class="form-control" id="content" name="content"
-                                  rows="25">{{$post->content}}</textarea>
+                    <div class="col-md-6">
+                        <h3 style="font-family: 'Pacifico', cursive;">How to prepare:</h3>
+                        {!! $post->content !!}
+
                     </div>
-                    <div class="col-md-6 form-group"><h3>Ingredients:</h3>
-                        <textarea disabled
-                                  style="background:white;border-style: none; border-color: Transparent; overflow: auto;"
-                                  class="form-control" id="ingredients" name="ingredients"
-                                  rows="25">{{$post->ingredients}} </textarea>
+                    <div class="col-md-6">
+                        <h3 style="font-family: 'Pacifico', cursive;">Ingredients:</h3>
+                        {{$post->ingredients}}
                     </div>
                     <br>
                     <div class="row">
@@ -40,8 +37,8 @@
                         </div>
                     </div>
                 </div>
-<hr>
-            </form>
+                <hr>
+            </for>
 
             <h3 class="text-center">Add comment</h3>
             <p class="text-center"><em>Please Fill in!</em></p><br>
