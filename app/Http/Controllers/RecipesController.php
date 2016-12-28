@@ -21,7 +21,30 @@ class RecipesController extends Controller
 
     public function addblog()
     {
-       return view('addblog');
+        return view('addblog');
     }
 
+    public function editblog()
+    {
+        return view('edit');
+    }
+
+    public function updateblog()
+    {
+        return view('update');
+    }
+
+    public function viewblog(post $post)
+    {
+
+
+        return view('view', compact('post'));
+    }
+
+    public function destroy()
+    {
+        $posts = Post::Paginate(5);
+        //dd($posts);
+        return view('index', compact('posts'));
+    }
 }

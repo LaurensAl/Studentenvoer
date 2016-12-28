@@ -6,16 +6,17 @@
         <h3 class="text-center">Add Recipe</h3>
         <p class="text-center"><em>Please Fill in!</em></p><br>
 
-        <div class="row">
+        <form enctype="multipart/form-data" class="col-md-8" method="POST" action="/addblog"
+                                 id="addblog" >
             <div class="col-md-4">
                 {!! csrf_field() !!}
 
                 <div class="form-group">
-                    <label for="banner">Choose an image</label>
-                    <input type="file" name="banner">
+                    <label for="foto">Choose an image</label>
+                    <input type="file" name="foto" required>
                 </div>
             </div>
-            <div class="col-md-8">
+
                 <div class="row">
                     <div class="col-sm-10 form-group">
                         <input class="form-control" id="title" name="title" placeholder="Title" type="text" required>
@@ -35,6 +36,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
 
 @endsection

@@ -15,7 +15,7 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $image = 'http://www.cicis.com/media/1138/pizza_trad_pepperoni.png';
+        $image = 'pizza.png';
 
         foreach (range(1, 20) as $index) {
             $title = $faker->text(80);
