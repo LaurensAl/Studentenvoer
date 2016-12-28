@@ -20,7 +20,7 @@ Route::get('addblog', 'RecipesController@addblog')->middleware('auth'); // add r
 Route::post('/addblog', 'RecipesController@updateblog')->middleware('auth'); //add recipe to DB
 
 Route::get('viewblog/editblog/{post}', 'RecipesController@editblog')->middleware('auth'); // edit recipe menu
-//Route::post('viewblog/editblog/{post}', 'RecipesController@editblogupdate')->middleware('auth'); // update existing recipe
+Route::post('/viewblog/editblog', 'RecipesController@editblogupdate')->middleware('auth'); // update existing recipe
 
 Route::get('viewblog/{post}', 'RecipesController@viewblog'); // view recipe
 

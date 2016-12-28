@@ -54,6 +54,24 @@ class RecipesController extends Controller
         return back()->with('status', 'Update was a succes!');
     }
 
+    public function editblogupdate(request $req)
+    {
+        $id = $req->id;
+        $content = Post::find($id);
+       if($req->hasFile('foto')) {
+           $foto = $req->file('foto');
+           $name = $foto->getClientOriginalName();
+           $foto->move(public_path() . '/images/', $name);
+       }
+        $post = array(
+        'title' => $req['title'],
+        'content' => $req['content'],
+        'ingredients' => $req['ingredients']);
+
+        $content->fill($post);
+        $content->save();
+        return back()->with('status', 'Update was a succes!');
+    }
 
     public function destroy()
     {

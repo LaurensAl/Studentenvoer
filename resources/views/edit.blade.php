@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <form enctype="multipart/form-data" class="col-md-12" method="POST" action="/editblogupdate"
+            <form enctype="multipart/form-data" class="col-md-12" method="POST" action="/viewblog/editblog"
                   id="editblogupdate"> {!! csrf_field() !!}
                 <div class="row">
                     <input type="hidden" name="id" id="id" value="{{$post->id}}">
