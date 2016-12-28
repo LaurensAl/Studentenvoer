@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    public function User()
+    public function Post()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(post::class);
     }
+
+    protected $fillable = [
+        'title', 'content', 'foto', 'ingredients',
+    ];
+    protected $table = "posts";
+
 }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Auth;
 
 class RecipesController extends Controller
 {
@@ -22,6 +24,7 @@ class RecipesController extends Controller
     public function addblog()
     {
         return view('addblog');
+
     }
 
     public function editblog()
@@ -29,10 +32,27 @@ class RecipesController extends Controller
         return view('edit');
     }
 
-    public function updateblog()
+    public function updateblog(request $req)
     {
-        return view('update');
+        $req->hasFile('foto');
+            $foto = $req->file('foto');
+            $name = $foto->getClientOriginalName();
+            $foto->move(public_path() . '/images/', $name);
+//            $foto->save('/images/', $name);
+
+
+
+        $post = new Post;
+        $post->title = $req['title'];
+        $post->content = $req['content'];
+        $post->ingredients = $req['ingredients'];
+        $post->foto = $name;
+        $post->user_id = Auth::user()->id;
+
+        $post->save();
+        return back()->with('status', 'Update was a succes!');
     }
+
 
     public function viewblog(post $post)
     {
@@ -45,6 +65,6 @@ class RecipesController extends Controller
     {
         $posts = Post::Paginate(5);
         //dd($posts);
-        return view('index', compact('posts'));
+        return view('index', compact('post'));
     }
 }

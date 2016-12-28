@@ -27,7 +27,7 @@ class PostsTableSeeder extends Seeder
                 'status' => 1,
                 'ingredients' => $faker->paragraph(30),
                 'foto' => $faker->randomElement($image),
-                'user_id' => $faker->numberBetween($min = 1, $max = 5),
+                'user_id' => $faker->numberBetween($min = 1, $max = 3),
             ]);
         }
 
