@@ -26,3 +26,5 @@ Route::get('viewblog/{post}', 'RecipesController@viewblog'); // view recipe
 
 Route::post('Delete', 'RecipesController@destroy')->middleware('auth'); // delete recipe
 
+Route::post('addcomment', 'CommentController@comment');
+

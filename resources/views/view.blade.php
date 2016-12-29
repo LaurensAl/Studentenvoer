@@ -61,7 +61,7 @@
                     <br><h6>*=required</h6>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <button class="btn pull-right" type="submit">Upload</button>
+                            <button class="btn pull-right" type="submit">Comment</button>
                         </div>
                     </div>
                 </div>

@@ -6,9 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    public function Post()
+//    public function Post()
+//    {
+//        return $this->belongsTo(post::class);
+//    }
+
+    public function comment()
     {
-        return $this->belongsTo(post::class);
+       return $this->belongsTo(comment::class);
     }
 
     protected $fillable = [

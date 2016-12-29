@@ -23,8 +23,12 @@ class CreatePostsTable extends Migration
          $table->tinyInteger('status')->default(1);
          $table->integer('user_id');
          $table->timestamps();
+
+
          });
          }
+
+
 
      public function down()
      {

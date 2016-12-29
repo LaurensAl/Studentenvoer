@@ -12,9 +12,60 @@
 
     {{--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>--}}
     {{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>--}}
+    {{--<script>--}}
+        {{--var isNS = (navigator.appName == "Netscape") ? 1 : 0;--}}
+
+        {{--if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);--}}
+
+        {{--function mischandler(){--}}
+            {{--return false;--}}
+        {{--}--}}
+
+        {{--function mousehandler(e){--}}
+            {{--var myevent = (isNS) ? e : event;--}}
+            {{--var eventbutton = (isNS) ? myevent.which : myevent.button;--}}
+            {{--if((eventbutton==2)||(eventbutton==3)) return false;--}}
+        {{--}--}}
+        {{--document.oncontextmenu = mischandler;--}}
+        {{--document.onmousedown = mousehandler;--}}
+        {{--document.onmouseup = mousehandler;--}}
+
+    {{--</script>--}}
 </head>
 <body>
+<script language=JavaScript>
 
+    var message="Don't steal please! - Laurens";
+
+    ///////////////////////////////////
+    function clickIE4(){
+        if (event.button==2){
+            alert(message);
+            return false;
+        }
+    }
+
+    function clickNS4(e){
+        if (document.layers||document.getElementById&&!document.all){
+            if (e.which==2||e.which==3){
+                alert(message);
+                return false;
+            }
+        }
+    }
+
+    if (document.layers){
+        document.captureEvents(Event.MOUSEDOWN);
+        document.onmousedown=clickNS4;
+    }
+    else if (document.all&&!document.getElementById){
+        document.onmousedown=clickIE4;
+    }
+
+    document.oncontextmenu=new Function("alert(message);return false")
+
+    // -->
+</script>
 @include('navbar')
 
 @yield('content')
