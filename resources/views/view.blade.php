@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'viewblog')
 @section('content')
-    <div id="contact" class="container" >
+    <div id="contact" class="container">
         <h3 class="text-center">View the recipe</h3>
         <p class="text-center"><em>Enjoy reading, preparing and eating!</em></p>
         <hr>
@@ -12,7 +12,9 @@
         @endif
         <div class="row"> {!! csrf_field() !!}
             <div class="col-md-12">
-                <div><img src="/images/{{$post->foto}}" width="100%"/></div>
+                <div><img style="display: block;
+    margin-left: auto;
+    margin-right: auto" src="/images/{{$post->foto}}" width="75%"/></div>
             </div>
             <for class="col-md-12">
                 <div class="row">
@@ -66,4 +68,6 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div><br />
 @endsection

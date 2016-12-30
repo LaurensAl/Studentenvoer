@@ -9,28 +9,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">--}}
     {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">--}}
-
-    {{--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>--}}
-    {{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>--}}
-    {{--<script>--}}
-        {{--var isNS = (navigator.appName == "Netscape") ? 1 : 0;--}}
-
-        {{--if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);--}}
-
-        {{--function mischandler(){--}}
-            {{--return false;--}}
-        {{--}--}}
-
-        {{--function mousehandler(e){--}}
-            {{--var myevent = (isNS) ? e : event;--}}
-            {{--var eventbutton = (isNS) ? myevent.which : myevent.button;--}}
-            {{--if((eventbutton==2)||(eventbutton==3)) return false;--}}
-        {{--}--}}
-        {{--document.oncontextmenu = mischandler;--}}
-        {{--document.onmousedown = mousehandler;--}}
-        {{--document.onmouseup = mousehandler;--}}
-
-    {{--</script>--}}
 </head>
 <body>
 <script language=JavaScript>
@@ -69,5 +47,6 @@
 @include('navbar')
 
 @yield('content')
+
 
 </body>
