@@ -6,13 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comments extends Model
 {
+    public function Post()
+    {
+        return $this->belongsTo('App\Post');
+    }
+
     protected $fillable = [
         'name','comments','email','posts_id' ];
 
-    public function Post()
-    {
-        return $this->belongsTo(Post::class);
-    }
+
     protected $table = "comments";
 }
 

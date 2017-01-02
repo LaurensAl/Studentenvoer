@@ -1,19 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
-use app\comment;
+use App\Comments;
 use Illuminate\Http\Request;
-
+use App\Post;
 class CommentController extends Controller
 {
-    public function comment(request $req){
+    public function store(request $req, $post_id){
 
-        $comment = new Comment;
-        $comment->name = $req['name'];
-        $comment->email = $req['email'];
-        $comment->comments = $req['comments'];
+        $this->validate($req, array(
+            'name'  => 'required|max:80',
+            'email'  => 'required|email|max:80',
+            'comment'  => 'required|min:5|max:255'
+        ));
+
+        $post = Post::find($post_id);
+
+        $comment = new Comments();
+        $comment->name = $req->name;
+        $comment->email = $req->email;
+        $comment->comment = $req->comment;
+        $comment->post()->associate($post);
 
         $comment->save();
-        return back()->with('status', 'Update was a succes!');
+
+        return redirect()->route('view.blog', [$post->slug]);
+
+
     }
 }

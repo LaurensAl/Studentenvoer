@@ -11,7 +11,9 @@
         <div class="row"> {!! csrf_field() !!}
             <div class="col-md-12">
                 <div class="form-group">
-                    <div><img src="/images/{{$post->foto}}" width="100%"/></div>
+                    <div><img style="display: block;
+    margin-left: auto;
+    margin-right: auto" src="/images/{{$post->foto}}" width="75%"/></div>
                     <label for="foto">Choose an image</label>
                     <input type="file" name="foto" value="">
                 </div>
@@ -33,7 +35,15 @@
 
                     <div class="row"><
                         <div class="col-md-12 form-group">
-                           <hr> <button class="btn pull-right" type="submit">Update</button>
+                           <hr> <button class="btn btn-success pull-right" type="submit">Update</button>
+
+                            <form enctype="multipart/form-data" action="/viewblog/editblog/delete" method="POST">
+                                <input type="hidden" name="id" value="{{ $post->id }}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-danger">Delete Post</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

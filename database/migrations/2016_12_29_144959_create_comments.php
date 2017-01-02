@@ -18,10 +18,10 @@ class CreateComments extends Migration
             $table->string('name', 80)->nullable();
             $table->string('email', 48)->nullable();
             $table->text('comment')->nullable();
+                        $table->integer('post_id')->unsigned();
             $table->timestamps();
-            $table->integer('post_id')->unsigned();
 
-            $table->foreign('post_id', 'fk_comments_idx')
+            $table->foreign('post_id')
                 ->references('id')->on('posts')
                 ->onDelete('cascade')
                 ->onUpdate('no action');

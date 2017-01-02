@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\Comments;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -13,7 +13,7 @@ class Post extends Model
 
     public function comment()
     {
-       return $this->belongsTo(comment::class);
+       return $this->BelongsTo('App\Comments', 'post_id');
     }
 
     protected $fillable = [

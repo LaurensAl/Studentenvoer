@@ -22,7 +22,7 @@ class CommentsTableSeeder extends Seeder
                 'name' => $faker->text(20),
                 'comment' => $faker->paragraph(30),
                 'email' => $faker->text(15),
-                'post_id' => $faker->numberBetween($min = 1, $max = 20),
+                'post_id' => $faker->numberBetween($min = 1, $max = 3),
             ]);
         }
     }

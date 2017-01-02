@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Comments;
 use Illuminate\Support\Facades\Auth;
 
 class RecipesController extends Controller
@@ -28,7 +29,10 @@ class RecipesController extends Controller
 
     public function viewblog(post $post)
     {
-        return view('view', compact('post'));
+
+        $comments = Comments::class;
+
+        return view('view', compact('post', 'comments'));
     }
 
     public function editblog(post $post)
@@ -58,25 +62,27 @@ class RecipesController extends Controller
     {
         $id = $req->id;
         $content = Post::find($id);
-       if($req->hasFile('foto')) {
-           $foto = $req->file('foto');
-           $name = $foto->getClientOriginalName();
-           $foto->move(public_path() . '/images/', $name);
-       }
+        if ($req->hasFile('foto')) {
+            $foto = $req->file('foto');
+            $name = $foto->getClientOriginalName();
+            $foto->move(public_path() . '/images/', $name);
+        }
         $post = array(
-        'title' => $req['title'],
-        'content' => $req['content'],
-        'ingredients' => $req['ingredients']);
+            'title' => $req['title'],
+            'content' => $req['content'],
+            'ingredients' => $req['ingredients']);
 
         $content->fill($post);
         $content->save();
         return back()->with('status', 'Update was a succes!');
     }
 
-    public function destroy()
+    public function delete(request $req)
     {
-        $posts = Post::Paginate(5);
-        //dd($posts);
-        return view('index', compact('post'));
+        $id = $req->id;
+        $id = Post::find($id);
+        $id->delete();
+
+//        return redirect('index', compact('posts'))->with('status', 'Update was a succes!');
     }
 }

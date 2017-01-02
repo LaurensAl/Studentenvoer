@@ -1,5 +1,6 @@
 <?php
 
+// Trashpile -- Laurens
 //Route::get('/', 'PagesController@home')->middleware('auth');
 //Route::get('/home', 'HomeController@index');
 //Route::get('/', 'RecipesController@home');
@@ -22,9 +23,9 @@ Route::post('/addblog', 'RecipesController@updateblog')->middleware('auth'); //a
 Route::get('viewblog/editblog/{post}', 'RecipesController@editblog')->middleware('auth'); // edit recipe menu
 Route::post('/viewblog/editblog', 'RecipesController@editblogupdate')->middleware('auth'); // update existing recipe
 
-Route::get('viewblog/{post}', 'RecipesController@viewblog'); // view recipe
+Route::get('viewblog/{post}', 'RecipesController@viewblog')->name('view.blog'); // view recipe
 
-Route::post('Delete', 'RecipesController@destroy')->middleware('auth'); // delete recipe
+Route::post('/viewblog/delete', 'RecipesController@delete')->middleware('auth'); // delete recipe
 
-Route::post('addcomment', 'CommentController@comment');
+Route::post('comments/{post_id}', ['uses' => 'CommentController@store', 'as' => 'comments.store']);
 
