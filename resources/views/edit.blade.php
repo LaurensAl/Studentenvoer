@@ -9,16 +9,16 @@
         <a href="/viewblog/{{$post->id}}">
             <button class="btn pull-right">Return</button>
         </a>
-        <form enctype="multipart/form-data" class="col-md-12" method="POST" action="/viewblog/editblog" id="editblogupdate"> {!! csrf_field() !!}
+        <form enctype="multipart/form-data" class="col-md-12" method="POST" action="/viewblog/editblog"
+              id="editblogupdate"> {!! csrf_field() !!}
             <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <div><img style="display: block;
+                <div class="col-md-12 form-group">
+                    <div><img style="display: block;
     margin-left: auto;
     margin-right: auto" src="/images/{{$post->foto}}" width="75%"/></div>
-                        <label for="foto">Choose an image</label>
-                        <input type="file" name="foto" value="">
-                    </div>
+                    <label for="foto">Choose an image</label>
+                    <input type="file" name="foto" value="">
+
                 </div>
                 <div class="row">
                     <input type="hidden" name="id" id="id" value="{{$post->id}}">
@@ -38,13 +38,14 @@
                                 class="form-control" id="ingredients" name="ingredients"
                                 rows="25">{{$post->ingredients}} </textarea>
                     </div>
-                    <div class="row"><
+                    <div class="row">
                         <div class="col-md-12 form-group">
                             <hr>
                             <button class="btn btn-success pull-right" type="submit">Update</button>
                         </div>
                     </div>
                 </div>
+            </div>
         </form>
         <form enctype="multipart/form-data" class="col-md-12" method="POST" action="/destroy"
               id="destroy"> {!! csrf_field() !!}

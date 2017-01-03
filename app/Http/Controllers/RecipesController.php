@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Label;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Comments;
@@ -19,7 +20,8 @@ class RecipesController extends Controller
     {
         $posts = Post::Paginate(5);
 
-        //dd($posts);
+
+            //dd($posts);
         return view('index', compact('posts'));
     }
 
@@ -30,10 +32,11 @@ class RecipesController extends Controller
 
     public function viewblog(post $post)
     {
+//        $comments = Post::find($post)->comments;
 
-        $comments = Comments::class;
+//        $labels = Label::find($post);
 
-        return view('view', compact('post', 'comments'));
+        return view('view', compact('post', 'labels', 'comments'));
     }
 
     public function editblog(post $post)

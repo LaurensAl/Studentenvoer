@@ -8,6 +8,12 @@
         <h3 class="text-center">View the recipe</h3>
         <p class="text-center"><em>Enjoy reading, preparing and eating!</em></p>
         <hr>
+{{--{{ddd($labels)}}--}}
+        {{--@if( $label->healthy == 1)--}}
+
+                {{--<button>Healthy</button>--}}
+
+            {{--@endif--}}
         @if (Auth::user())
             <a href="editblog/{{$post->id}}">
                 <button class="btn pull-right">Edit</button>

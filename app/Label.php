@@ -8,11 +8,11 @@ class Label extends Model
 {
     public function Post()
     {
-        return $this->belongsTo('App\Post');
+        return $this->belongsTo('App\Post', 'post_id');
     }
 
     protected $fillable = [
-        'healthy','fattening','vegetables', 'meat', 'easy', 'difficult', 'posts_id' ];
+        'healthy','fattening','vegetables', 'meat', 'easy', 'difficult', 'post_id' ];
 
 
     protected $table = "labels";

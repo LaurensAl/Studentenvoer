@@ -13,7 +13,7 @@ class Post extends Model
 
     public function comment()
     {
-       return $this->BelongsTo('App\Comments', 'post_id');
+       return $this->HasMany('App\Comments', 'post_id');
     }
 
     protected $fillable = [
