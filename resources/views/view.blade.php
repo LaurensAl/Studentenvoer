@@ -43,8 +43,16 @@
                 <hr>
             </form>
             <br/>
+
+            {{--@foreach($post->healthy as $healthy)--}}
+            {{--{{ $healthy->healthy }};--}}
+
+                {{--@endforeach--}}
             <div class="row">
                 <div>
+
+
+
                     @foreach($post->comment as $comment)
                         <div class="comment col-md-12">
                             <p><strong>Name:<br/></strong>{{ $comment->name }}</p>
