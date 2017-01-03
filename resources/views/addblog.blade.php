@@ -38,7 +38,7 @@
                 <br>
                 <div class="row">
                     <div class="col-md-12 form-group">
-                        <button class="btn pull-right" type="submit">Upload</button>
+                        <button class="btn pull-right" type="submit">Add Recipe</button>
                     </div>
                 </div>
             </div>

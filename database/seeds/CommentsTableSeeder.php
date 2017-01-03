@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Comments;
 use Faker\Factory as Faker;
 use Illuminate\Support\Str;
+
 class CommentsTableSeeder extends Seeder
 
 {
@@ -22,7 +23,7 @@ class CommentsTableSeeder extends Seeder
                 'name' => $faker->text(20),
                 'comment' => $faker->paragraph(30),
                 'email' => $faker->text(15),
-                'post_id' => $faker->numberBetween($min = 1, $max = 3),
+                'post_id' => $faker->numberBetween($min = 1, $max = 20),
             ]);
         }
     }
