@@ -10,7 +10,7 @@ class CommentController extends Controller
 
         $this->validate($id, array(
             'name'  => 'required|max:80',
-            'email'  => 'required|email|max:80',
+            'email'  => 'required|email|max:64',
             'comment'  => 'required|min:5|max:255'
         ));
 
