@@ -18,6 +18,7 @@ class RecipesController extends Controller
     public function index()
     {
         $posts = Post::Paginate(5);
+
         //dd($posts);
         return view('index', compact('posts'));
     }
@@ -77,12 +78,11 @@ class RecipesController extends Controller
         return back()->with('status', 'Update was a succes!');
     }
 
-    public function delete(request $req)
+    public function destroy(request $id)
     {
-        $id = $req->id;
-        $id = Post::find($id);
-        $id->delete();
+        $blog = Post::find($id->id);
+        $blog->delete();
 
-//        return redirect('index', compact('posts'))->with('status', 'Update was a succes!');
+        return redirect()->route('index')->with('status', 'Post has been deleted!');
     }
 }

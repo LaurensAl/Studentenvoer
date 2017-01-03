@@ -14,6 +14,7 @@
         @else
             @foreach ($posts as $post)
 
+
                 <h2 style="font-family: 'Pacifico', cursive;" class="col-md-12">{!! $post->title !!}
                 </h2>
                 <div class="col-md-4">
@@ -30,8 +31,9 @@
                     <h3 style="font-family: 'Pacifico', cursive;">Ingredients:</h3>
                     {!! mb_substr($post->ingredients,0,500) !!}
                 </div>
-
+                    {{--{{ $post->orderBy('created_at', 'desc')->get()}}--}}
             @endforeach
+
 
         @endif
     </div>

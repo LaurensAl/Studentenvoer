@@ -15,7 +15,7 @@ Route::get('/logout', 'Auth\LoginController@logout'); // Logout function
 Route::get('about', 'PagesController@about'); // about me menu
 Route::get('contact', 'PagesController@contact'); // contact form
 
-Route::get('/', 'RecipesController@index'); // Homemenu
+Route::get('/', ['as' => 'index','uses' => 'RecipesController@index']); // Homemenu
 
 Route::get('addblog', 'RecipesController@addblog')->middleware('auth'); // add recipe -> menu
 Route::post('/addblog', 'RecipesController@updateblog')->middleware('auth'); //add recipe to DB
@@ -25,7 +25,7 @@ Route::post('/viewblog/editblog', 'RecipesController@editblogupdate')->middlewar
 
 Route::get('viewblog/{post}', 'RecipesController@viewblog')->name('view.blog'); // view recipe
 
-Route::post('/viewblog/delete', 'RecipesController@delete')->middleware('auth'); // delete recipe
+Route::post('/destroy/{post}', 'RecipesController@destroy')->middleware('auth'); // delete recipe
 
-Route::post('comments/{post_id}', ['uses' => 'CommentController@store', 'as' => 'comments.store']);
+Route::post('comments/{post_id}', ['uses' => 'CommentController@store', 'as' => 'comments.store']); // add comments to DB // Not working!!!!!!!!
 
