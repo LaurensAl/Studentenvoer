@@ -48,11 +48,11 @@
                     </div>
                 </div>
             </form>
-            <form enctype="multipart/form-data" class="col-md-12" method="POST" action="/destroy/{{$post->id}}"
-                  id="editblogupdate"> {!! csrf_field() !!}
+            <form enctype="multipart/form-data" class="col-md-12" method="POST" action="/destroy"
+                  id="destroy"> {!! csrf_field() !!}
                 <div class="row">
                     <input type="hidden" name="id" id="id" value="{{$post->id}}">
-                    <button type="submit" name="name" class="btn btn-danger pull-right">Delete Post</button>
+                    <button type="submit" class="btn btn-danger pull-right">Delete Post</button>
                 </div>
             </form>
 

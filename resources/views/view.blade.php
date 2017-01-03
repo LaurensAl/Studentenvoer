@@ -74,7 +74,7 @@
             <h3 class="text-center">Add comment</h3>
             <p class="text-center"><em>Please Fill in!</em></p><br>
 
-              {{ Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST']) }}
+              {{ Form::open(['route' => ['store', $post->id], 'method' => 'POST']) }}
 
 
                 <div class="row">{!! csrf_field() !!}

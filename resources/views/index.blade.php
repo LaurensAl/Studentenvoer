@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Recipes')
 @section('content')
-    {!! $posts->render() !!}
-    <div class="container col-md-8 col-md-offset-2 ">
+
+
+    <div class="container  ">
         @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
@@ -14,29 +15,34 @@
         @else
             @foreach ($posts as $post)
 
-
-                <h2 style="font-family: 'Pacifico', cursive;" class="col-md-12">{!! $post->title !!}
+                <h2 style="font-family: 'Pacifico', cursive;" class=" row col-md-12">{!! $post->title !!}
                 </h2>
-                <div class="col-md-4">
-                    <img src="/images/{!! $post->foto !!}"
-                         width="100%">
-                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div><br>
+                            <img src="/images/{!! $post->foto !!}"
+                                 width="100%">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-4">
+                            <h3 style="font-family: 'Pacifico', cursive;">How to prepare:</h3>
+                            {!! mb_substr($post->content,0,500) !!}
+                            <h6><a href="viewblog/{{$post->id}}">Read more...</a></h6>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 style="font-family: 'Pacifico', cursive;">Ingredients:</h3>
+                            {!! mb_substr($post->ingredients,0,500) !!}
+                        </div>
 
-                <div class="col-md-4">
-                    <h3 style="font-family: 'Pacifico', cursive;">How to prepare:</h3>
-                    {!! mb_substr($post->content,0,500) !!}
-                    <h6><a href="viewblog/{{$post->id}}">Read more...</a></h6>
-                </div>
-                <div class="col-md-4">
-                    <h3 style="font-family: 'Pacifico', cursive;">Ingredients:</h3>
-                    {!! mb_substr($post->ingredients,0,500) !!}
-                </div>
+                    </div>
                     {{--{{ $post->orderBy('created_at', 'desc')->get()}}--}}
-            @endforeach
+                    @endforeach
 
 
-        @endif
+                    @endif
+                </div>
     </div>
-
+    <div class="col-md-12 text-right">{!! $posts->render() !!}</div>
 
 @endsection

@@ -1,21 +1,20 @@
 <?php
 
-// Trashpile -- Laurens
+// Trashpile (old,unusable) -- Laurens
 //Route::get('/', 'PagesController@home')->middleware('auth');
 //Route::get('/home', 'HomeController@index');
 //Route::get('/', 'RecipesController@home');
 //Route::post('upload', 'ImagesController@store');
 
+//Route::get('/', function () {return view('welcome');});
 
 Auth::routes();
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/logout', 'Auth\LoginController@logout'); // Logout function
 Route::get('about', 'PagesController@about'); // about me menu
-Route::get('contact', 'PagesController@contact'); // contact form
+Route::get('contact', 'PagesController@contact'); // contact form // !bewust geen mailserver!
 
-Route::get('/', ['as' => 'index','uses' => 'RecipesController@index']); // Homemenu
+Route::get('/', ['as' => 'index', 'uses' => 'RecipesController@index']); // Homemenu
 
 Route::get('addblog', 'RecipesController@addblog')->middleware('auth'); // add recipe -> menu
 Route::post('/addblog', 'RecipesController@updateblog')->middleware('auth'); //add recipe to DB
@@ -25,7 +24,7 @@ Route::post('/viewblog/editblog', 'RecipesController@editblogupdate')->middlewar
 
 Route::get('viewblog/{post}', 'RecipesController@viewblog')->name('view.blog'); // view recipe
 
-Route::post('/destroy/{post}', 'RecipesController@destroy')->middleware('auth'); // delete recipe
+Route::post('/destroy', 'RecipesController@destroy')->middleware('auth'); // delete recipe
 
-Route::post('comments/{post_id}', ['uses' => 'CommentController@store', 'as' => 'comments.store']); // add comments to DB // Not working!!!!!!!!
+Route::post('comments/{post_id}', ['uses' => 'CommentController@store', 'as' => 'store']); // add comments to DB // Not working!!!!!!!!
 

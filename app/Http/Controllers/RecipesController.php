@@ -56,7 +56,7 @@ class RecipesController extends Controller
         $post->user_id = Auth::user()->id;
 
         $post->save();
-        return back()->with('status', 'Update was a succes!');
+        return back()->with('status', 'Succes, Recipe has been created!');
     }
 
     public function editblogupdate(request $req)

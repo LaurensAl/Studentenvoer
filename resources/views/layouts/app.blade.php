@@ -49,4 +49,6 @@
 @yield('content')
 
 
-</body>
+</body><div id="copyright">© Copyright 2017 Laurens Albers</div><br />
+</html>
+
