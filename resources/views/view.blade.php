@@ -46,10 +46,10 @@
             <div class="row">
                 <div>
                     @foreach($post->comment as $comment)
-                        <div class="comment">
+                        <div class="comment col-md-12">
                             <p><strong>Name:<br/></strong>{{ $comment->name }}</p>
                             <p><strong>Comment:<br/></strong>{{ $comment->comment }}</p>
-                            <p align="right"><strong>created:</strong>{{ $comment->created_at }}</p>
+                            <h6 align="right"><strong>created:</strong>{{ $comment->created_at }}</h6>
                         </div>
                         <hr>
                     @endforeach
@@ -68,7 +68,7 @@
                                required>
                     </div>
                     <div class="col-md-12 form-group"><h4>Comments:*</h4>
-                        <textarea class="form-control" id="ingredients" name="comment" placeholder="Comment" rows="10"
+                        <textarea class="form-control" id="ingredients" name="comment" placeholder="Comment" rows="8"
                                   required></textarea>
                     </div>
                     <br><h6>*=required</h6>
