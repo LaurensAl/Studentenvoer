@@ -67,6 +67,9 @@ class RecipesController extends Controller
             $foto = $req->file('foto');
             $name = $foto->getClientOriginalName();
             $foto->move(public_path() . '/images/', $name);
+            $content->foto = $name;
+//            ddd($content);
+            $content->save();
         }
         $post = array(
             'title' => $req['title'],

@@ -9,19 +9,17 @@
         <a href="/viewblog/{{$post->id}}">
             <button class="btn pull-right">Return</button>
         </a>
-        <div class="row"> {!! csrf_field() !!}
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div><img style="display: block;
+        <form enctype="multipart/form-data" class="col-md-12" method="POST" action="/viewblog/editblog" id="editblogupdate"> {!! csrf_field() !!}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div><img style="display: block;
     margin-left: auto;
     margin-right: auto" src="/images/{{$post->foto}}" width="75%"/></div>
-                    <label for="foto">Choose an image</label>
-                    <input type="file" name="foto" value="">
+                        <label for="foto">Choose an image</label>
+                        <input type="file" name="foto" value="">
+                    </div>
                 </div>
-            </div>
-
-            <form enctype="multipart/form-data" class="col-md-12" method="POST" action="/viewblog/editblog"
-                  id="editblogupdate"> {!! csrf_field() !!}
                 <div class="row">
                     <input type="hidden" name="id" id="id" value="{{$post->id}}">
                     <div class="col-md-12 form-group"><h3>Recipe:</h3>
@@ -47,16 +45,16 @@
                         </div>
                     </div>
                 </div>
-            </form>
-            <form enctype="multipart/form-data" class="col-md-12" method="POST" action="/destroy"
-                  id="destroy"> {!! csrf_field() !!}
-                <div class="row">
-                    <input type="hidden" name="id" id="id" value="{{$post->id}}">
-                    <button type="submit" class="btn btn-danger pull-right">Delete Post</button>
-                </div>
-            </form>
+        </form>
+        <form enctype="multipart/form-data" class="col-md-12" method="POST" action="/destroy"
+              id="destroy"> {!! csrf_field() !!}
+            <div class="row">
+                <input type="hidden" name="id" id="id" value="{{$post->id}}">
+                <button type="submit" class="btn btn-danger pull-right">Delete Post</button>
+            </div>
+        </form>
 
-        </div>
+    </div>
     </div>
 
 @endsection
