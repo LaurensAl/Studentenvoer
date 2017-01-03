@@ -12,7 +12,7 @@ Auth::routes();
 
 Route::get('/logout', 'Auth\LoginController@logout'); // Logout function
 Route::get('about', 'PagesController@about'); // about me menu
-Route::get('contact', 'PagesController@contact'); // contact form // !bewust geen mailserver!
+Route::get('contact', 'PagesController@contact'); // contact form // !Geen mailserver Con.!
 
 Route::get('/', ['as' => 'index', 'uses' => 'RecipesController@index']); // Homemenu
 
@@ -26,5 +26,5 @@ Route::get('viewblog/{post}', 'RecipesController@viewblog')->name('view.blog'); 
 
 Route::post('/destroy', 'RecipesController@destroy')->middleware('auth'); // delete recipe
 
-Route::post('comments/{post_id}', ['uses' => 'CommentController@store', 'as' => 'store']); // add comments to DB // Not working!!!!!!!!
+Route::post('/comments', 'CommentController@store'); // add comments to DB
 
