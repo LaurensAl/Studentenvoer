@@ -21,7 +21,7 @@ class RecipesController extends Controller
         $posts = Post::Paginate(5);
 
 
-            //dd($posts);
+        //dd($posts);
         return view('index', compact('posts'));
     }
 
@@ -32,11 +32,10 @@ class RecipesController extends Controller
 
     public function viewblog(post $post)
     {
-//        $comments = Post::find($post)->comments;
 
-//        $labels = Label::find($post);
-
-        return view('view', compact('post', 'labels', 'comments'));
+//        $label = $post->label;
+//ddd($post->label);
+        return view('view', compact('post'));
     }
 
     public function editblog(post $post)

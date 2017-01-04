@@ -2,11 +2,16 @@
 @section('title', 'viewblog')
 @section('content')
 
+
+
+
     <div id="contact" class="container">
         <h3 class="text-center">View the recipe</h3>
         <p class="text-center"><em>Enjoy reading, preparing and eating!</em></p>
         <hr>
+
         @if (Auth::user())
+
             <a href="editblog/{{$post->id}}">
                 <button class="btn pull-right">Edit</button>
             </a>
@@ -14,8 +19,8 @@
         <div class="row"> {!! csrf_field() !!}
             <div class="col-md-12">
                 <div><img style="display: block;
-    margin-left: auto;
-    margin-right: auto" src="/images/{{$post->foto}}" width="75%"/></div>
+       margin-left: auto;
+       margin-right: auto" src="/images/{{$post->foto}}" width="75%"/></div>
             </div>
             <form class="col-md-12">
                 <div class="row">
@@ -42,17 +47,8 @@
                 </div>
                 <hr>
             </form>
-            <br/>
 
-            {{--@foreach($post->healthy as $healthy)--}}
-            {{--{{ $healthy->healthy }};--}}
-
-                {{--@endforeach--}}
-            <div class="row">
                 <div>
-
-
-
                     @foreach($post->comment as $comment)
                         <div class="comment col-md-12">
                             <p><strong>Name:<br/></strong>{{ $comment->name }}</p>
@@ -62,10 +58,10 @@
                         <hr>
                     @endforeach
                 </div>
-            </div>
+            </div><hr>
             <h3 class="text-center">Add comment</h3>
             <p class="text-center"><em>Please Fill in!</em></p><br>
-            <form enctype="multipart/form-data" method="POST" action="/comments"
+            <form class="col-md-12" enctype="multipart/form-data" method="POST" action="/comments"
                   id="destroy"> {!! csrf_field() !!}
                 <div class="row">{!! csrf_field() !!}
                     <div class="col-md-6 form-group"><h4>Name:*</h4>
