@@ -1,10 +1,6 @@
 @extends('layouts.app')
 @section('title', 'viewblog')
 @section('content')
-
-
-
-
     <div id="contact" class="container">
         <h3 class="text-center">View the recipe</h3>
         <p class="text-center"><em>Enjoy reading, preparing and eating!</em></p>
@@ -48,44 +44,45 @@
                 <hr>
             </form>
 
-                <div>
-                    @foreach($post->comment as $comment)
-                        <div class="comment col-md-12">
-                            <p><strong>Name:<br/></strong>{{ $comment->name }}</p>
-                            <p><strong>Comment:<br/></strong>{{ $comment->comment }}</p>
-                            <h6 align="right"><strong>created:</strong>{{ $comment->created_at }}</h6>
-                        </div>
-                        <hr>
-                    @endforeach
-                </div>
-            </div><hr>
-            <h3 class="text-center">Add comment</h3>
-            <p class="text-center"><em>Please Fill in!</em></p><br>
-            <form class="col-md-12" enctype="multipart/form-data" method="POST" action="/comments"
-                  id="destroy"> {!! csrf_field() !!}
-                <div class="row">{!! csrf_field() !!}
-                    <div class="col-md-6 form-group"><h4>Name:*</h4>
-                        <input class="form-control" id="namecom" name="name" placeholder="Name" type="text" required>
+            <div>
+                @foreach($post->comment as $comment)
+                    <div class="comment col-md-12">
+                        <p><strong>Name:<br/></strong>{{ $comment->name }}</p>
+                        <p><strong>Comment:<br/></strong>{{ $comment->comment }}</p>
+                        <h6 align="right"><strong>created:</strong>{{ $comment->created_at }}</h6>
                     </div>
-                    <div class="col-md-6 form-group"><h4>Email:*</h4>
-                        <input class="form-control" id="emailt" name="email" placeholder="Email" type="email"
-                               required>
-                    </div>
-                    <div class="col-md-12 form-group"><h4>Comments:*</h4>
-                        <textarea class="form-control" id="ingredients" name="comment" placeholder="Comment" rows="8"
-                                  required></textarea>
-                    </div>
-                    <br><h6>*=required</h6>
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <input type="hidden" name="id" id="id" value="{{$post->id}}">
-                            <button class="btn pull-right" type="submit">Comment</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-
-
+                    <hr>
+                @endforeach
+            </div>
         </div>
+        <hr>
+        <h3 class="text-center">Add comment</h3>
+        <p class="text-center"><em>Please Fill in!</em></p><br>
+        <form class="col-md-12" enctype="multipart/form-data" method="POST" action="/comments"
+              id="destroy"> {!! csrf_field() !!}
+            <div class="row">{!! csrf_field() !!}
+                <div class="col-md-6 form-group"><h4>Name:*</h4>
+                    <input class="form-control" id="namecom" name="name" placeholder="Name" type="text" required>
+                </div>
+                <div class="col-md-6 form-group"><h4>Email:*</h4>
+                    <input class="form-control" id="emailt" name="email" placeholder="Email" type="email"
+                           required>
+                </div>
+                <div class="col-md-12 form-group"><h4>Comments:*</h4>
+                    <textarea class="form-control" id="ingredients" name="comment" placeholder="Comment" rows="8"
+                              required></textarea>
+                </div>
+                <br><h6>*=required</h6>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input type="hidden" name="id" id="id" value="{{$post->id}}">
+                        <button class="btn pull-right" type="submit">Comment</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
     </div><br/>
 @endsection
