@@ -15,15 +15,16 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $image = array('sandwich.png', 'pasta.png', 'pizza.png','burger.png','shake.png');
+        $image = array('sub.png', 'pasta.png', 'pizza.png','burger.jpg','shakes.jpg');
 
         foreach (range(1, 20) as $index) {
             $title = $faker->text(80);
 
+
             Post::create([
                 'title' => $title,
-                'content' => $faker->paragraph(30),
-                'description' => $faker->paragraph(30),
+                'content' => $faker->paragraph(25),
+                'description' =>$faker->paragraph(20),
                 'slug' => Str::slug($title, '-'),
                 'status' => 1,
                 'ingredients' => $faker->paragraph(30),

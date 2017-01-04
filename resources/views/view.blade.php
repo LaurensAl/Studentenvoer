@@ -50,10 +50,10 @@
                         </div>
 
                 </div>
-                <hr>
+                <div class="col-md-12"><h3 style="font-family: 'Pacifico', cursive;">Comments:</h3><hr></div>
             </form>
 
-            <div>
+            <div class="col-md-12">
                 @foreach($post->comment as $comment)
                     <div class="comment col-md-12">
                         <p><strong>Name:<br/></strong>{{ $comment->name }}</p>

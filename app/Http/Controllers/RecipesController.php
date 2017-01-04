@@ -49,6 +49,7 @@ class RecipesController extends Controller
         $post = new Post;
         $post->title = $req['title'];
         $post->content = $req['content'];
+        $post->description =$req['description'];
         $post->ingredients = $req['ingredients'];
         $post->foto = $name;
         $post->user_id = Auth::user()->id;
@@ -72,6 +73,7 @@ class RecipesController extends Controller
         $post = array(
             'title' => $req['title'],
             'content' => $req['content'],
+            'description' => $req['description'],
             'ingredients' => $req['ingredients']);
 
         $content->fill($post);
