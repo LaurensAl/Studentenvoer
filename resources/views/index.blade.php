@@ -25,15 +25,12 @@
                         </div>
                     </div>
                     <div>
-                        <div class="col-md-4">
+                        <div class="col-md-8">
                             <h3 style="font-family: 'Pacifico', cursive;">How to prepare:</h3>
-                            {!! mb_substr($post->content,0,500) !!}
+                            {!! mb_substr($post->description,0,500) !!}
                             <h6><a href="viewblog/{{$post->id}}">Read more...</a></h6>
                         </div>
-                        <div class="col-md-4">
-                            <h3 style="font-family: 'Pacifico', cursive;">Ingredients:</h3>
-                            {!! mb_substr($post->ingredients,0,500) !!}
-                        </div>
+
 
                     </div>
                     {{--{{ $post->orderBy('created_at', 'desc')->get()}}--}}

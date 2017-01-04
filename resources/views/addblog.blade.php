@@ -22,18 +22,23 @@
                     <label for="foto">Choose an image</label>
                     <input type="file" name="foto" required>
                 </div>
-            </div><br>
+            </div>
+            <br>
             <div class="row">
                 <div class="col-md-12 form-group">
                     <input class="form-control" id="title" name="title" placeholder="Title" type="text" required>
                 </div>
+                <div class="col-md-12 form-group">
+                    <textarea class="form-control" id="description" name="description" placeholder="description"
+                              rows="7" required></textarea>
+                </div>
                 <div class="col-md-6 form-group">
                         <textarea class="form-control" id="content" name="content" placeholder="content"
-                                 rows="20" required></textarea>
+                                  rows="20" required></textarea>
                 </div>
                 <div class="col-md-6 form-group">
                         <textarea class="form-control" id="ingredients" name="ingredients" placeholder="Add Ingredients"
-                                 rows="20" required></textarea>
+                                  rows="20" required></textarea>
                 </div>
                 <br>
                 <div class="row">

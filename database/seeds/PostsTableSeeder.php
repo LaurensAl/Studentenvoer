@@ -23,6 +23,7 @@ class PostsTableSeeder extends Seeder
             Post::create([
                 'title' => $title,
                 'content' => $faker->paragraph(30),
+                'description' => $faker->paragraph(30),
                 'slug' => Str::slug($title, '-'),
                 'status' => 1,
                 'ingredients' => $faker->paragraph(30),
