@@ -15,16 +15,15 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $image = array('sub.png', 'pasta.png', 'pizza.png','burger.jpg','shakes.jpg');
+        $image = array('sub.png', 'pasta.png', 'pizza.png', 'burger.jpg', 'bufmac.png');
 
         foreach (range(1, 20) as $index) {
             $title = $faker->text(80);
 
-
             Post::create([
                 'title' => $title,
                 'content' => $faker->paragraph(25),
-                'description' =>$faker->paragraph(20),
+                'description' => $faker->paragraph(20),
                 'slug' => Str::slug($title, '-'),
                 'status' => 1,
                 'ingredients' => $faker->paragraph(30),
@@ -32,7 +31,5 @@ class PostsTableSeeder extends Seeder
                 'user_id' => $faker->numberBetween($min = 1, $max = 3),
             ]);
         }
-
     }
-
 }
